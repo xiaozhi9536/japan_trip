@@ -3,81 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>日本行程 8/9–8/17 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>日本行程 2025 · 8/9–8/17</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--red:#C0392B;--dark:#1a1a1a;--light:#f5f0eb;--gold:#c9a84c;--text:#333;--muted:#888;--card:#fff;--border:#e8e0d5;--green:#27ae60;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Noto Sans TC',sans-serif;background:var(--light);color:var(--text);}
-header{background:var(--dark);color:white;padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden;}
-header::before{content:'🗻';position:absolute;font-size:110px;opacity:.05;right:-5px;top:-5px;}
-header h1{font-family:'Playfair Display',serif;font-size:26px;letter-spacing:2px;margin-bottom:4px;}
-header p{color:#aaa;font-size:12px;letter-spacing:4px;text-transform:uppercase;}
-.trip-bar{background:var(--red);display:flex;justify-content:center;flex-wrap:wrap;gap:16px;padding:9px 12px;font-size:11px;color:white;letter-spacing:1px;}
-.day-tabs{display:flex;overflow-x:auto;background:white;border-bottom:2px solid var(--border);scrollbar-width:none;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.08);}
-.day-tabs::-webkit-scrollbar{display:none;}
-.tab{flex:0 0 auto;padding:10px 14px;cursor:pointer;font-size:11px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;text-align:center;}
-.tab .tab-date{font-size:10px;display:block;color:#bbb;}
-.tab .tab-label{display:block;margin-top:2px;}
-.tab.active{color:var(--red);border-bottom-color:var(--red);font-weight:700;}
-.tab:hover{color:var(--red);background:#fef9f9;}
-.day-section{display:none;padding:18px 14px;max-width:660px;margin:0 auto;animation:fadeIn .3s ease;}
-.day-section.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.day-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border);}
-.day-badge{background:var(--dark);color:white;border-radius:10px;padding:7px 12px;text-align:center;flex:0 0 auto;}
-.day-badge .num{font-size:20px;font-weight:700;line-height:1;}
-.day-badge .month{font-size:9px;opacity:.6;letter-spacing:1px;}
-.day-badge.red{background:var(--red);}
-.day-title{font-size:15px;font-weight:700;}
-.day-subtitle{font-size:11px;color:var(--muted);margin-top:2px;}
-.accom-card{background:white;border-radius:12px;border:1.5px solid var(--green);overflow:hidden;margin-bottom:16px;box-shadow:0 2px 8px rgba(39,174,96,.1);}
-.accom-header{background:linear-gradient(135deg,#f0faf4,#e8f5e9);padding:12px 14px;display:flex;align-items:center;gap:10px;}
-.accom-icon{font-size:22px;flex:0 0 auto;}
-.accom-info{flex:1;}
-.accom-name{font-size:13px;font-weight:700;color:#1a5c30;}
-.accom-meta{font-size:10px;color:#4a9a5c;margin-top:2px;}
-.accom-tag{background:#d4edda;color:#155724;font-size:9px;padding:2px 7px;border-radius:10px;font-weight:600;white-space:nowrap;}
-.accom-details{padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px;}
-.accom-chip{background:#f0f0f0;color:#555;font-size:10px;padding:3px 9px;border-radius:20px;}
-.accom-link{display:flex;align-items:center;gap:5px;padding:8px 14px;border-top:1px solid var(--border);font-size:10px;font-weight:600;color:var(--green);text-decoration:none;background:#f9fef9;}
-.accom-link:hover{background:#e8f5e9;}
-.accom-card.checkout{border-color:#e65100;box-shadow:0 2px 8px rgba(230,81,0,.08);}
-.accom-card.checkout .accom-header{background:linear-gradient(135deg,#fff8f0,#fff3e0);}
-.accom-card.checkout .accom-name{color:#8b3a00;}
-.accom-card.checkout .accom-meta{color:#c46a00;}
-.accom-card.checkout .accom-tag{background:#fff3e0;color:#e65100;}
-.timeline{position:relative;padding-left:14px;}
-.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--border));}
-.spot{position:relative;margin-bottom:12px;padding-left:28px;}
-.spot::before{content:'';position:absolute;left:7px;top:14px;width:14px;height:14px;border-radius:50%;background:white;border:3px solid var(--red);z-index:1;}
-.spot-card{background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--border);box-shadow:0 2px 6px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s;}
-.spot-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.09);}
-.spot-inner{padding:12px 14px;}
-.spot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
-.spot-time{font-size:10px;color:var(--red);font-weight:700;letter-spacing:1px;white-space:nowrap;margin-top:2px;}
-.spot-name{font-size:14px;font-weight:700;line-height:1.3;flex:1;}
-.spot-note{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5;}
-.spot-tag{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:600;white-space:nowrap;flex:0 0 auto;}
-.tag-nature{background:#e8f5e9;color:#2e7d32;}
-.tag-culture{background:#fff3e0;color:#e65100;}
-.tag-food{background:#fce4ec;color:#c62828;}
-.tag-shop{background:#e3f2fd;color:#1565c0;}
-.tag-activity{background:#f3e5f5;color:#6a1b9a;}
-.tag-view{background:#e0f7fa;color:#00695c;}
-.tag-theme{background:#fff8e1;color:#f57f17;}
-.map-btn{display:flex;align-items:center;gap:5px;background:#f7f7f7;color:#555;text-decoration:none;font-size:10px;font-weight:600;padding:7px 12px;border-top:1px solid var(--border);transition:background .2s;}
-.map-btn:hover{background:#eee;color:var(--red);}
-.arrow{display:flex;align-items:center;gap:6px;padding:5px 0 5px 28px;font-size:10px;color:var(--muted);}
-.notice-box{background:#fff8e1;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 12px;margin-top:12px;font-size:11px;line-height:1.6;color:#5d4037;}
-.notice-box strong{display:block;margin-bottom:3px;color:#3e2723;}
-.section-label{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin:0 0 10px 0;padding-left:2px;}
-.badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.ci-badge{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;padding:3px 9px;border-radius:10px;}
+header{background:var(--dark);color:white;padding:26px 16px 18px;text-align:center;position:relative;overflow:hidden;}
+header::before{content:'🗻';position:absolute;font-size:100px;opacity:.05;right:-4px;top:-4px;}
+header h1{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:2px;margin-bottom:3px;}
+header p{color:#aaa;font-size:11px;letter-spacing:3px;}
+.tbar{background:var(--red);display:flex;justify-content:center;flex-wrap:wrap;gap:14px;padding:8px 12px;font-size:10px;color:white;letter-spacing:1px;}
+.nav{display:flex;background:white;border-bottom:2px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.nb{flex:1;padding:11px 6px;cursor:pointer;font-size:11px;font-weight:500;color:var(--muted);border:none;border-bottom:2px solid transparent;margin-bottom:-2px;background:none;text-align:center;transition:all .2s;}
+.nb.on{color:var(--red);border-bottom-color:var(--red);font-weight:700;}
+.nb:hover{background:#fef9f9;color:var(--red);}
+.pg{display:none;padding:16px 12px;max-width:680px;margin:0 auto;}
+.pg.on{display:block;animation:fi .3s ease;}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.dtabs{display:flex;overflow-x:auto;background:#fafaf8;border-bottom:1px solid var(--border);scrollbar-width:none;margin:-16px -12px 16px;}
+.dtabs::-webkit-scrollbar{display:none;}
+.dtab{flex:0 0 auto;padding:9px 12px;cursor:pointer;font-size:10px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;text-align:center;transition:all .2s;}
+.dtab .d{font-size:9px;display:block;color:#bbb;}
+.dtab .l{display:block;margin-top:1px;}
+.dtab.on{color:var(--red);border-bottom-color:var(--red);font-weight:700;}
+.ds{display:none;}.ds.on{display:block;}
+.dh{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.db{color:white;border-radius:10px;padding:6px 11px;text-align:center;flex:0 0 auto;}
+.db .n{font-size:19px;font-weight:700;line-height:1;}
+.db .m{font-size:9px;opacity:.6;letter-spacing:1px;}
+.dt{font-size:14px;font-weight:700;}
+.dsub{font-size:11px;color:var(--muted);margin-top:2px;}
+.ac{background:white;border-radius:10px;border:1.5px solid var(--green);overflow:hidden;margin-bottom:12px;box-shadow:0 2px 6px rgba(39,174,96,.08);}
+.ac-h{background:linear-gradient(135deg,#f0faf4,#e8f5e9);padding:10px 12px;display:flex;align-items:center;gap:9px;}
+.ac-i{font-size:19px;flex:0 0 auto;}
+.ac-n{font-size:12px;font-weight:700;color:#1a5c30;}
+.ac-m{font-size:10px;color:#4a9a5c;margin-top:1px;}
+.ac-t{background:#d4edda;color:#155724;font-size:9px;padding:2px 6px;border-radius:8px;font-weight:600;white-space:nowrap;}
+.ac-d{padding:8px 12px;display:flex;flex-wrap:wrap;gap:6px;}
+.ac-c{background:#f0f0f0;color:#555;font-size:10px;padding:2px 8px;border-radius:18px;}
+.ac-l{display:flex;align-items:center;gap:4px;padding:6px 12px;border-top:1px solid var(--border);font-size:10px;font-weight:600;color:var(--green);text-decoration:none;background:#f9fef9;}
+.ac.co{border-color:#e65100;}
+.ac.co .ac-h{background:linear-gradient(135deg,#fff8f0,#fff3e0);}
+.ac.co .ac-n{color:#8b3a00;}
+.ac.co .ac-m{color:#c46a00;}
+.ac.co .ac-t{background:#fff3e0;color:#e65100;}
+.tl{position:relative;padding-left:14px;}
+.tl::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red),var(--border));}
+.sp{position:relative;margin-bottom:10px;padding-left:26px;}
+.sp::before{content:'';position:absolute;left:7px;top:13px;width:13px;height:13px;border-radius:50%;background:white;border:3px solid var(--red);z-index:1;}
+.sc{background:var(--card);border-radius:9px;overflow:hidden;border:1px solid var(--border);box-shadow:0 1px 5px rgba(0,0,0,.04);transition:transform .2s;}
+.sc:hover{transform:translateY(-1px);}
+.si{padding:11px 12px;}
+.st{display:flex;justify-content:space-between;align-items:flex-start;gap:7px;}
+.stm{font-size:10px;color:var(--red);font-weight:700;letter-spacing:1px;white-space:nowrap;margin-top:2px;}
+.sn{font-size:13px;font-weight:700;line-height:1.3;flex:1;}
+.sno{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5;}
+.stag{font-size:9px;padding:2px 6px;border-radius:16px;font-weight:600;white-space:nowrap;flex:0 0 auto;}
+.t-nat{background:#e8f5e9;color:#2e7d32;}
+.t-cul{background:#fff3e0;color:#e65100;}
+.t-fd{background:#fce4ec;color:#c62828;}
+.t-sh{background:#e3f2fd;color:#1565c0;}
+.t-ac{background:#f3e5f5;color:#6a1b9a;}
+.t-vw{background:#e0f7fa;color:#00695c;}
+.t-th{background:#fff8e1;color:#f57f17;}
+.mb{display:flex;align-items:center;gap:4px;background:#f7f7f7;color:#555;text-decoration:none;font-size:10px;font-weight:600;padding:6px 12px;border-top:1px solid var(--border);transition:background .2s;}
+.mb:hover{background:#eee;color:var(--red);}
+.aw{display:flex;gap:5px;padding:4px 0 4px 26px;font-size:10px;color:var(--muted);}
+.note{background:#fff8e1;border-left:3px solid var(--gold);border-radius:0 7px 7px 0;padding:9px 11px;margin-top:10px;font-size:11px;line-height:1.6;color:#5d4037;}
+.note strong{display:block;margin-bottom:2px;color:#3e2723;}
+.br{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.cb{display:inline-flex;align-items:center;gap:3px;font-size:9px;font-weight:700;padding:3px 8px;border-radius:9px;}
 .ci{background:#e8f5e9;color:#2e7d32;}
-.co{background:#fff3e0;color:#e65100;}
-.bonus-box{background:linear-gradient(135deg,#fff0f6,#fce4ec);border:1px solid #f8bbd0;border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:11px;color:#880e4f;}
-.bonus-box strong{display:block;font-size:12px;margin-bottom:3px;}
+.co2{background:#fff3e0;color:#e65100;}
+.bx{background:linear-gradient(135deg,#fff0f6,#fce4ec);border:1px solid #f8bbd0;border-radius:9px;padding:9px 11px;margin-bottom:10px;font-size:11px;color:#880e4f;}
+.bx strong{display:block;font-size:12px;margin-bottom:2px;}
+
+/* TIPS */
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:10px;}
+.tc{background:var(--card);border-radius:11px;border:0.5px solid var(--border);padding:.9rem 1.1rem;}
+.th{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.tic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex:0 0 auto;}
+.tt{font-size:13px;font-weight:700;}
+.tb{font-size:11px;color:var(--muted);line-height:1.7;}
+.tb strong{color:var(--text);}
+.tw{margin-top:7px;background:#fcebeb;border-radius:7px;padding:7px 9px;font-size:10px;color:#a32d2d;}
+.tg2{margin-top:7px;background:#e8f5e9;border-radius:7px;padding:7px 9px;font-size:10px;color:#2e7d32;}
+.tax-table{width:100%;border-collapse:collapse;font-size:10px;margin-top:8px;}
+.tax-table th{background:#f0f0f0;color:var(--text);padding:5px 7px;text-align:left;font-weight:700;}
+.tax-table td{padding:5px 7px;border-top:1px solid var(--border);color:var(--muted);}
+.tax-table td strong{color:var(--text);}
 </style>
 </head>
 <body>
@@ -85,228 +100,264 @@ header p{color:#aaa;font-size:12px;letter-spacing:4px;text-transform:uppercase;}
   <h1>🗾 日本行程 2025</h1>
   <p>Aug 9 – Aug 17 · Tokyo &amp; Kawaguchiko</p>
 </header>
-<div class="trip-bar">
+<div class="tbar">
   <span>🏠 3間 Airbnb</span>
   <span>🗼 東京入谷 8/9–8/10</span>
   <span>🗻 河口湖別墅 8/10–8/12</span>
   <span>🗼 東京駒込 8/12–8/17</span>
 </div>
-<div class="day-tabs">
-  <div class="tab active" onclick="showDay(0)"><span class="tab-date">8/9</span><span class="tab-label">淺草・上野</span></div>
-  <div class="tab" onclick="showDay(1)"><span class="tab-date">8/10</span><span class="tab-label">→河口湖</span></div>
-  <div class="tab" onclick="showDay(2)"><span class="tab-date">8/11</span><span class="tab-label">河口湖②</span></div>
-  <div class="tab" onclick="showDay(3)"><span class="tab-date">8/12</span><span class="tab-label">御殿場→東京</span></div>
-  <div class="tab" onclick="showDay(4)"><span class="tab-date">8/13</span><span class="tab-label">原宿・澀谷</span></div>
-  <div class="tab" onclick="showDay(5)"><span class="tab-date">8/14</span><span class="tab-label">鎌倉</span></div>
-  <div class="tab" onclick="showDay(6)"><span class="tab-date">8/15</span><span class="tab-label">湘南・江之島</span></div>
-  <div class="tab" onclick="showDay(7)"><span class="tab-date">8/16</span><span class="tab-label">迪士尼</span></div>
-  <div class="tab" onclick="showDay(8)"><span class="tab-date">8/17</span><span class="tab-label">築地・秋葉原</span></div>
+<div class="nav">
+  <button class="nb on" onclick="showPg('it',this)">📅 每日行程</button>
+  <button class="nb" onclick="showPg('tp',this)">📋 注意事項</button>
 </div>
 
-<!-- 8/9 -->
-<div class="day-section active" id="day0">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">9</div></div>
-    <div><div class="day-title">東京 第一天・淺草・上野</div><div class="day-subtitle">抵達後直接出發！</div></div>
+<!-- ======= ITINERARY ======= -->
+<div class="pg on" id="pg-it">
+  <div class="dtabs">
+    <div class="dtab on" onclick="showD(0)"><span class="d">8/9</span><span class="l">淺草・上野</span></div>
+    <div class="dtab" onclick="showD(1)"><span class="d">8/10</span><span class="l">→河口湖</span></div>
+    <div class="dtab" onclick="showD(2)"><span class="d">8/11</span><span class="l">河口湖②</span></div>
+    <div class="dtab" onclick="showD(3)"><span class="d">8/12</span><span class="l">御殿場→東京</span></div>
+    <div class="dtab" onclick="showD(4)"><span class="d">8/13</span><span class="l">原宿・澀谷</span></div>
+    <div class="dtab" onclick="showD(5)"><span class="d">8/14</span><span class="l">鎌倉</span></div>
+    <div class="dtab" onclick="showD(6)"><span class="d">8/15</span><span class="l">湘南・江之島</span></div>
+    <div class="dtab" onclick="showD(7)"><span class="d">8/16</span><span class="l">迪士尼</span></div>
+    <div class="dtab" onclick="showD(8)"><span class="d">8/17</span><span class="l">築地・秋葉原</span></div>
   </div>
-  <div class="badge-row"><span class="ci-badge ci">🏠 CHECK IN・入谷</span></div>
-  <div class="accom-card">
-    <div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">Sunny Inn Hotel 201・入谷</div><div class="accom-meta">台東区・入谷駅步行2分・住8/9–8/10</div></div><span class="accom-tag">⭐ 4.75</span></div>
-    <div class="accom-details"><span class="accom-chip">🛏 2臥室 4床</span><span class="accom-chip">🚿 獨立浴室</span><span class="accom-chip">📍 上野・淺草步行圈</span><span class="accom-chip">2LDK 7名OK</span></div>
-    <a class="accom-link" href="https://www.airbnb.com.tw/rooms/1627358949341340557" target="_blank">🔗 查看 Airbnb 房源</a>
+
+  <!-- 8/9 -->
+  <div class="ds on" id="d0">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">9</div></div><div><div class="dt">東京 第一天・淺草・上野</div><div class="dsub">抵達後直接出發！</div></div></div>
+    <div class="br"><span class="cb ci">🏠 CHECK IN・入谷</span></div>
+    <div class="ac"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">Sunny Inn Hotel 201・入谷</div><div class="ac-m">台東区・入谷駅步行2分・住8/9–8/10</div></div><span class="ac-t">⭐ 4.75</span></div><div class="ac-d"><span class="ac-c">🛏 2臥室 4床</span><span class="ac-c">📍 上野・淺草步行圈</span><span class="ac-c">7名OK</span></div><a class="ac-l" href="https://www.airbnb.com.tw/rooms/1627358949341340557" target="_blank">🔗 查看 Airbnb 房源</a></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">抵達後</div><div class="sn">淺草寺・仲見世通り</div></div><span class="stag t-cul">文化</span></div><div class="sno">住宿在入谷，距淺草步行約10分！仲見世通り200間店，人形燒、草莓大福必吃，雷門大燈籠必拍</div></div><a class="mb" href="https://maps.google.com/?q=浅草寺" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行約10分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">下午</div><div class="sn">東京晴空塔・Solamachi</div></div><span class="stag t-vw">景觀</span></div><div class="sno">634公尺高！Solamachi商場有餐廳、伴手禮、動漫周邊，可選擇購票登塔</div></div><a class="mb" href="https://maps.google.com/?q=東京スカイツリー" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚇 地鐵約10分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">傍晚</div><div class="sn">上野アメ横市場</div></div><span class="stag t-sh">購物</span></div><div class="sno">住宿鄰近上野，步行即達！海鮮丼、藥妝、零食通通有，氣氛像台灣夜市</div></div><a class="mb" href="https://maps.google.com/?q=アメヤ横丁+上野" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🍜 回住宿前晚餐</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">晚餐</div><div class="sn">入谷・上野周邊晚餐</div></div><span class="stag t-fd">美食</span></div><div class="sno">住宿附近居酒屋、拉麵、燒肉都有。明天需早起自駕，建議早點休息</div></div></div></div>
+    </div>
   </div>
-  <p class="section-label">📍 今日行程</p>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">抵達後</div><div class="spot-name">淺草寺・仲見世通り</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">住宿在入谷，距淺草步行約10分！仲見世通り200間店，人形燒、草莓大福必吃，雷門大燈籠必拍</div></div><a class="map-btn" href="https://maps.google.com/?q=浅草寺" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行約10分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">下午</div><div class="spot-name">東京晴空塔・Solamachi</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">634公尺高！Solamachi商場有餐廳、伴手禮、動漫周邊，可選擇購票登塔</div></div><a class="map-btn" href="https://maps.google.com/?q=東京スカイツリー" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚇 地鐵約10分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">傍晚</div><div class="spot-name">上野アメ横市場</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">住宿鄰近上野，步行即達！海鮮丼、藥妝、零食通通有，氣氛像台灣夜市</div></div><a class="map-btn" href="https://maps.google.com/?q=アメヤ横丁+上野" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🍜 回住宿前晚餐</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">晚餐</div><div class="spot-name">入谷・上野周邊晚餐</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">住宿附近居酒屋、拉麵、燒肉都有。明天需早起自駕，建議早點休息</div></div></div></div>
+
+  <!-- 8/10 -->
+  <div class="ds" id="d1">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">10</div></div><div><div class="dt">東京 → 河口湖 第一天</div><div class="dsub">忠靈塔・忍野八海</div></div></div>
+    <div class="br"><span class="cb co2">🏠 CHECK OUT・入谷</span><span class="cb ci">🏡 CHECK IN・河口湖別墅</span></div>
+    <div class="ac co" style="margin-bottom:8px"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">Sunny Inn Hotel 201・退房</div><div class="ac-m">記得帶走所有行李，自駕前往河口湖</div></div><span class="ac-t">退房日</span></div></div>
+    <div class="ac"><div class="ac-h"><div class="ac-i">🏡</div><div style="flex:1"><div class="ac-n">Toquetake Sanso 別墅・富士河口湖</div><div class="ac-m">富士河口湖町・住8/10–8/12（2晚）</div></div><span class="ac-t">⭐ 4.94</span></div><div class="ac-d"><span class="ac-c">🛏 3臥室 10床</span><span class="ac-c">🛁 木風呂</span><span class="ac-c">🌅 湖景</span><span class="ac-c">🚌 免費接送</span><span class="ac-c">🏕 吊床</span></div><a class="ac-l" href="https://www.airbnb.com.tw/rooms/549583423950799050" target="_blank">🔗 查看 Airbnb 房源</a></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">07:00</div><div class="sn">忠靈塔（新倉山淺間公園）</div></div><span class="stag t-cul">文化</span></div><div class="sno">早去人少光線最美！約400階石階，富士山＋五重塔的絕景構圖，免費入場</div></div><a class="mb" href="https://maps.google.com/?cid=15733293726462568345" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行5分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">09:00</div><div class="sn">本町通り（下吉田街道）</div></div><span class="stag t-vw">景觀</span></div><div class="sno">昭和老街風情，街道盡頭正對富士山，復古燈柱超上鏡</div></div><a class="mb" href="https://maps.google.com/?q=下吉田本町通り" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約20分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">11:30</div><div class="sn">河口湖畔午餐</div></div><span class="stag t-fd">美食</span></div><div class="sno">推薦甲州特色「ほうとう」南瓜寬麵，或景觀咖啡廳邊吃邊看富士山</div></div></div></div>
+      <div class="aw">🚗 開車約20分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">14:00</div><div class="sn">忍野八海</div></div><span class="stag t-nat">自然</span></div><div class="sno">富士山伏流水湧出的8個泉池，世界遺產。茅草屋＋富士山倒影，可餵鯉魚</div></div><a class="mb" href="https://maps.google.com/?cid=1601773399916388209" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 前往別墅</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">傍晚</div><div class="sn">Toquetake Sanso 入住・木風呂</div></div><span class="stag t-ac">享受</span></div><div class="sno">🛁 晚上泡木風呂！湖景別墅有免費接送，吊床上享受富士山夜景</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- 8/11 -->
+  <div class="ds" id="d2">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">11</div></div><div><div class="dt">河口湖 第二天</div><div class="dsub">天空鳥居・纜車・西湖</div></div></div>
+    <div class="ac" style="margin-bottom:12px"><div class="ac-h"><div class="ac-i">🏡</div><div style="flex:1"><div class="ac-n">Toquetake Sanso 別墅（第2晚）</div><div class="ac-m">今晚繼續住這裡・明天退房</div></div><span class="ac-t">⭐ 4.94</span></div></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">08:00</div><div class="sn">富士山遙拝所（天空の鳥居）</div></div><span class="stag t-cul">文化</span></div><div class="sno">鳥居框住富士山山頂！步行30分鐘上山，入場費200日圓，早去避暑</div></div><a class="mb" href="https://maps.google.com/?cid=12497809727370112236" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約10分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">11:00</div><div class="sn">河口湖遊覧船（天晴）</div></div><span class="stag t-ac">體驗</span></div><div class="sno">從湖上欣賞富士山！木製仿古遊覧船，航程約20分鐘，成人1,000日圓</div></div><a class="mb" href="https://maps.google.com/?q=河口湖遊覧船天晴" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約15分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">13:00</div><div class="sn">天上山公園（富士山纜車）</div></div><span class="stag t-vw">景觀</span></div><div class="sno">纜車來回1,000日圓，山頂同時欣賞富士山＋河口湖全景</div></div><a class="mb" href="https://maps.google.com/?cid=18411347041651092919" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約20分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">15:30</div><div class="sn">西湖いやしの里根場</div></div><span class="stag t-cul">文化</span></div><div class="sno">重建的茅草屋古村落！手工藝體驗、和菓子製作、穿和服拍照，入場費500日圓</div></div><a class="mb" href="https://maps.google.com/?q=西湖いやしの里根場" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 回別墅・最後一晚</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">晚上</div><div class="sn">別墅・最後一晚木風呂</div></div><span class="stag t-ac">享受</span></div><div class="sno">🛁 最後一晚！在吊床上仰望星空，明天退房往御殿場方向出發</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- 8/12 -->
+  <div class="ds" id="d3">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">12</div></div><div><div class="dt">御殿場 Outlets → 返回東京</div><div class="dsub">繞富士山一圈</div></div></div>
+    <div class="br"><span class="cb co2">🏡 CHECK OUT・河口湖別墅</span><span class="cb ci">🏠 CHECK IN・駒込</span></div>
+    <div class="ac co" style="margin-bottom:8px"><div class="ac-h"><div class="ac-i">🏡</div><div style="flex:1"><div class="ac-n">Toquetake Sanso・退房</div><div class="ac-m">帶走所有行李，直接自駕往富士宮方向</div></div><span class="ac-t">退房日</span></div></div>
+    <div class="ac"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">東京住宿・駒込站附近</div><div class="ac-m">駒込駅步行圈・住8/12–8/17（5晚）</div></div><span class="ac-t">8/12 入住</span></div><div class="ac-d"><span class="ac-c">🚃 JR山手線・駒込駅</span><span class="ac-c">🌿 六義園步行圈</span><span class="ac-c">↔ 新宿20分</span></div><a class="ac-l" href="https://www.airbnb.com.tw/rooms/44343778" target="_blank">🔗 查看 Airbnb 房源</a></div>
+    <div class="bx"><strong>🌿 駒込限定！六義園</strong>住宿步行圈內的江戶時代大名庭園，東京最美日本庭園之一，入場費300日圓。</div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">09:30</div><div class="sn">まかいの牧場</div></div><span class="stag t-ac">體驗</span></div><div class="sno">鞦韆＋富士山的超熱門打卡！餵羊、牽山羊、現做鮮奶霜淇淋，開門即到人少</div></div><a class="mb" href="https://maps.google.com/?cid=10960162282246731445" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約30分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">12:00</div><div class="sn">富士山夢の大橋</div></div><span class="stag t-vw">景觀</span></div><div class="sno">階梯彷彿直通富士山！免費，24小時，順路拍照即可</div></div><a class="mb" href="https://maps.google.com/?cid=2581878181426727470" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車約40分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">13:30</div><div class="sn">御殿場 Premium Outlets</div></div><span class="stag t-sh">購物</span></div><div class="sno">210間品牌！Nike、Coach、Burberry折扣超大。背景還有富士山，開到晚上20:00</div></div><a class="mb" href="https://maps.google.com/?cid=5814346422745768836" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚗 開車返回東京・駒込 約1.5小時</div>
+    </div>
+    <div class="note"><strong>🗺️ 今日路線邏輯</strong>富士山西南 → 南 → 東側（御殿場）→ 東京，完美繞一圈不走回頭路！</div>
+  </div>
+
+  <!-- 8/13 -->
+  <div class="ds" id="d4">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">13</div></div><div><div class="dt">原宿・澀谷・Nintendo TOKYO</div><div class="dsub">購物＋任天堂＋日落夜景</div></div></div>
+    <div class="ac" style="margin-bottom:12px"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">駒込住宿（第2晚）</div><div class="ac-m">JR山手線 駒込駅 → 原宿駅 約12分</div></div></div></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">09:00</div><div class="sn">明治神宮</div></div><span class="stag t-cul">文化</span></div><div class="sno">東京最知名神社，70公頃森林，清晨最清幽。從駒込搭山手線到原宿只要約12分鐘！免費入場</div></div><a class="mb" href="https://maps.google.com/?q=明治神宮" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行5分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">10:30</div><div class="sn">原宿・竹下通り</div></div><span class="stag t-sh">購物</span></div><div class="sno">可愛少女系聖地！棉花糖可麗餅、彩虹棉花糖、藥妝、二手古著</div></div><a class="mb" href="https://maps.google.com/?q=竹下通り+原宿" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行8分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">12:00</div><div class="sn">表參道・午餐</div></div><span class="stag t-fd">美食</span></div><div class="sno">表參道Hills地下美食街，名牌旗艦店林立，找個好店吃午餐再出發</div></div><a class="mb" href="https://maps.google.com/?q=表参道ヒルズ" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行約15分鐘 → 抵達澀谷</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">13:30</div><div class="sn">Nintendo TOKYO（澀谷 PARCO 6F）</div></div><span class="stag t-sh">購物</span></div><div class="sno">日本唯一任天堂旗艦店！Switch 限定款、馬力歐・薩爾達・皮卡丘限定周邊，只有這裡才買得到的東京限定版。建議預留1–1.5小時。開放時間 11:00–21:00</div></div><a class="mb" href="https://maps.google.com/?q=Nintendo+TOKYO+渋谷パルコ" target="_blank">📍 Google Maps・澀谷 PARCO 6F</a></div></div>
+      <div class="aw">🚶 PARCO 下樓・步行至澀谷十字路口</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">15:30</div><div class="sn">澀谷十字路口・逛街</div></div><span class="stag t-sh">購物</span></div><div class="sno">全球最繁忙路口！Shibuya 109、Loft、東急Hands、藥妝店集中在這一帶</div></div><a class="mb" href="https://maps.google.com/?q=渋谷スクランブル交差点" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行即達 Scramble Square</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">17:30</div><div class="sn">澀谷 Sky 觀景台</div></div><span class="stag t-vw">景觀</span></div><div class="sno">⚠️ 需提前網路預約！選日落前1小時入場，360度無遮擋東京全景，票價2,000日圓</div></div><a class="mb" href="https://maps.google.com/?cid=8067212359343678579" target="_blank">📍 Google Maps</a></div></div>
+    </div>
+    <div class="note"><strong>⚡ 澀谷Sky立即預約！</strong>shibuya-scramble-square.com，8月旺季極搶手！Nintendo TOKYO 週末人超多，建議一到澀谷先衝 PARCO。</div>
+  </div>
+
+  <!-- 8/14 -->
+  <div class="ds" id="d5">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">14</div></div><div><div class="dt">鎌倉一日遊</div><div class="dsub">從駒込搭電車・勿開車</div></div></div>
+    <div class="ac" style="margin-bottom:12px"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">駒込住宿（第3晚）</div><div class="ac-m">駒込駅 → 鎌倉：山手線轉橫須賀線，約70分鐘</div></div></div></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">07:00</div><div class="sn">鎌倉高校前踏切</div></div><span class="stag t-cul">聖地</span></div><div class="sno">《灌籃高手》取景地！早上7點人最少，現有設置專門拍照區</div></div><a class="mb" href="https://maps.google.com/?cid=1819797686801071229" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚃 江之電約10分 → 長谷站步行15分</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">09:00</div><div class="sn">高德院鎌倉大佛</div></div><span class="stag t-cul">文化</span></div><div class="sno">高11.3公尺青銅大佛，建於1252年。入場費300日圓，可進入大佛內部</div></div><a class="mb" href="https://maps.google.com/?cid=2216777826481991500" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚃 搭江之電至鎌倉站</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">11:00</div><div class="sn">鶴岡八幡宮</div></div><span class="stag t-cul">文化</span></div><div class="sno">鎌倉最重要的神社，建於1063年，本宮居高俯瞰鎌倉市區</div></div><a class="mb" href="https://maps.google.com/?q=鶴岡八幡宮" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行5分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">12:30</div><div class="sn">小町通・午餐・伴手禮</div></div><span class="stag t-fd">美食</span></div><div class="sno">紫芋可樂餅、鳩サブレー、抹茶霜淇淋必買。午餐推薦鎌倉野菜料理或海鮮丼</div></div><a class="mb" href="https://maps.google.com/?q=小町通り+鎌倉" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行至海邊</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">下午</div><div class="sn">由比ヶ浜・鎌倉海邊</div></div><span class="stag t-nat">自然</span></div><div class="sno">8月海水浴場開放！可下水游泳或踏浪，傍晚夕陽非常美</div></div></div></div>
+    </div>
+    <div class="note"><strong>🚃 交通路線</strong>駒込 →（山手線）→ 品川 →（橫須賀線）→ 鎌倉，約70分鐘。</div>
+  </div>
+
+  <!-- 8/15 -->
+  <div class="ds" id="d6">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">15</div></div><div><div class="dt">湘南單軌 &amp; 江之島</div><div class="dsub">從駒込搭電車前往大船</div></div></div>
+    <div class="ac" style="margin-bottom:12px"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">駒込住宿（第4晚）</div><div class="ac-m">駒込駅 → 大船：山手線轉橫須賀線，約60分鐘</div></div></div></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">10:00</div><div class="sn">湘南單軌電車（大船出發）</div></div><span class="stag t-ac">體驗</span></div><div class="sno">懸掛式單軌！電車掛在軌道下方穿越山丘隧道，像雲霄飛車。大船→江之島全程約15分鐘</div></div><a class="mb" href="https://maps.google.com/?cid=17539261575266044008" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚟 搭單軌至江之島站</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">11:00</div><div class="sn">江之島神社・參拜</div></div><span class="stag t-cul">文化</span></div><div class="sno">供奉弁財天的千年神社，求姻緣、藝術、財運最靈驗</div></div><a class="mb" href="https://maps.google.com/?q=江島神社" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 繼續往島內走</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">12:30</div><div class="sn">江之島・海鮮丼午餐</div></div><span class="stag t-fd">美食</span></div><div class="sno">島上海鮮超新鮮！生蠔、鮑魚、海膽丼，推薦島内参道兩旁的海景餐廳</div></div></div></div>
+      <div class="aw">🚶 步行約10分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">14:00</div><div class="sn">江之島岩屋洞窟</div></div><span class="stag t-nat">自然</span></div><div class="sno">海蝕天然洞窟，全長152公尺，燭光搖曳超神秘！入場費500日圓</div></div><a class="mb" href="https://maps.google.com/?q=江の島岩屋" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行至展望台</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">傍晚</div><div class="sn">シーキャンドル（燈塔）</div></div><span class="stag t-vw">景觀</span></div><div class="sno">360度展望台看富士山＋相模灣全景，傍晚夕陽超美，入場費500日圓</div></div><a class="mb" href="https://maps.google.com/?q=江の島シーキャンドル" target="_blank">📍 Google Maps</a></div></div>
+    </div>
+  </div>
+
+  <!-- 8/16 -->
+  <div class="ds" id="d7">
+    <div class="dh"><div class="db" style="background:var(--red)"><div class="m">AUG</div><div class="n">16</div></div><div><div class="dt">🎠 東京迪士尼樂園</div><div class="dsub">從駒込前往・山手線轉舞濱</div></div></div>
+    <div class="ac" style="margin-bottom:12px"><div class="ac-h"><div class="ac-i">🏠</div><div style="flex:1"><div class="ac-n">駒込住宿（第5晚）</div><div class="ac-m">駒込 → 東京駅（山手線）→ 舞濱（京葉線），約35分鐘</div></div></div></div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">09:00 開園</div><div class="sn">東京迪士尼樂園</div></div><span class="stag t-th">樂園</span></div><div class="sno">開園立刻衝！用App搶購 Premier Access。美女與野獸城堡、小熊維尼、星際大戰都超熱門</div></div><a class="mb" href="https://maps.google.com/?cid=16490271119724106699" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🎡 園內移動</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">中午</div><div class="sn">園內特色美食</div></div><span class="stag t-fd">美食</span></div><div class="sno">米奇造型點心、印第安納瓊斯燻雞腿必吃！避開12–13點尖峰用餐</div></div></div></div>
+      <div class="aw">🎡 繼續遊玩</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">20:00</div><div class="sn">夜間遊行・煙火</div></div><span class="stag t-ac">體驗</span></div><div class="sno">東京迪士尼壓軸！提前去卡位，閉園21:00</div></div></div></div>
+    </div>
+    <div class="note"><strong>🎟️ 門票＋交通</strong>8月旺季門票需提前官網購買！駒込 →（山手線）→ 東京 →（JR京葉線）→ 舞濱站，全程約35分鐘。</div>
+  </div>
+
+  <!-- 8/17 -->
+  <div class="ds" id="d8">
+    <div class="dh"><div class="db" style="background:var(--dark)"><div class="m">AUG</div><div class="n">17</div></div><div><div class="dt">築地・秋葉原・新宿</div><div class="dsub">最終日採購衝刺</div></div></div>
+    <div class="br"><span class="cb co2">🏠 CHECK OUT・駒込・記得退稅！</span></div>
+    <div class="bx"><strong>🌿 退房前可去六義園晨走！</strong>步行可達，早上8點開園，清晨幾乎沒人，入場費300日圓。</div>
+    <div class="tl">
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">07:00</div><div class="sn">築地場外市場・早餐</div></div><span class="stag t-fd">美食</span></div><div class="sno">日本海鮮聖地！新鮮海膽、鮪魚、鮭魚卵，玉子燒、炸牡蠣超好吃。從駒込搭山手線到新橋轉大江戸線約25分</div></div><a class="mb" href="https://maps.google.com/?q=築地場外市場" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚇 地鐵約20分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">10:00</div><div class="sn">秋葉原・電器＆動漫</div></div><span class="stag t-sh">購物</span></div><div class="sno">電器家電、動漫周邊、扭蛋！Yodobashi Camera、animate必逛。駒込搭山手線到秋葉原只要約15分鐘！</div></div><a class="mb" href="https://maps.google.com/?q=秋葉原電気街" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚇 地鐵約15分鐘</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">13:00</div><div class="sn">新宿・藥妝掃貨</div></div><span class="stag t-sh">購物</span></div><div class="sno">松本清、サンドラッグ集中在新宿！面膜、防曬、資生堂、肌研超划算。記得帶護照退稅</div></div><a class="mb" href="https://maps.google.com/?q=新宿マツモトキヨシ" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🚶 步行</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">15:00</div><div class="sn">新宿伊勢丹・地下食品樓</div></div><span class="stag t-sh">購物</span></div><div class="sno">伴手禮寶庫！東京芭娜娜、白色戀人、各式日本零食全部在這裡找得到</div></div><a class="mb" href="https://maps.google.com/?q=新宿伊勢丹" target="_blank">📍 Google Maps</a></div></div>
+      <div class="aw">🍜 最後晚餐</div>
+      <div class="sp"><div class="sc"><div class="si"><div class="st"><div><div class="stm">晚餐</div><div class="sn">新宿思い出横丁</div></div><span class="stag t-fd">美食</span></div><div class="sno">昭和風情懷舊小巷！串燒、日本酒、燒鳥，東京最後一餐在這裡最有感覺</div></div><a class="mb" href="https://maps.google.com/?q=新宿思い出横丁" target="_blank">📍 Google Maps</a></div></div>
+    </div>
+    <div class="note"><strong>✈️ 回程交通</strong>成田：新宿 → 成田特快（N'EX）約80分。羽田：新宿 → 品川 → 羽田，約40分。記得帶護照辦理免稅退稅！</div>
   </div>
 </div>
 
-<!-- 8/10 -->
-<div class="day-section" id="day1">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">10</div></div>
-    <div><div class="day-title">東京 → 河口湖 第一天</div><div class="day-subtitle">忠靈塔・忍野八海</div></div>
-  </div>
-  <div class="badge-row"><span class="ci-badge co">🏠 CHECK OUT・入谷</span><span class="ci-badge ci">🏡 CHECK IN・河口湖別墅</span></div>
-  <div class="accom-card checkout" style="margin-bottom:10px"><div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">Sunny Inn Hotel 201・退房</div><div class="accom-meta">記得帶走所有行李，自駕前往河口湖</div></div><span class="accom-tag">退房日</span></div></div>
-  <div class="accom-card">
-    <div class="accom-header"><div class="accom-icon">🏡</div><div class="accom-info"><div class="accom-name">Toquetake Sanso 別墅・富士河口湖</div><div class="accom-meta">富士河口湖町・住8/10–8/12（2晚）</div></div><span class="accom-tag">⭐ 4.94</span></div>
-    <div class="accom-details"><span class="accom-chip">🛏 3臥室 10床</span><span class="accom-chip">🛁 木風呂</span><span class="accom-chip">🌅 湖景</span><span class="accom-chip">🚌 免費接送</span><span class="accom-chip">🏕 吊床</span></div>
-    <a class="accom-link" href="https://www.airbnb.com.tw/rooms/549583423950799050" target="_blank">🔗 查看 Airbnb 房源</a>
-  </div>
-  <p class="section-label">📍 今日行程</p>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">07:00</div><div class="spot-name">忠靈塔（新倉山淺間公園）</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">早去人少光線最美！約400階石階，富士山＋五重塔的絕景構圖，免費入場</div></div><a class="map-btn" href="https://maps.google.com/?cid=15733293726462568345" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行5分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">09:00</div><div class="spot-name">本町通り（下吉田街道）</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">昭和老街風情，街道盡頭正對富士山，復古燈柱超上鏡</div></div><a class="map-btn" href="https://maps.google.com/?q=下吉田本町通り" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約20分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">11:30</div><div class="spot-name">河口湖畔午餐</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">推薦甲州特色「ほうとう」南瓜寬麵，或景觀咖啡廳邊吃邊看富士山</div></div></div></div>
-    <div class="arrow">🚗 開車約20分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">14:00</div><div class="spot-name">忍野八海</div></div><span class="spot-tag tag-nature">自然</span></div><div class="spot-note">富士山伏流水湧出的8個泉池，世界遺產。茅草屋＋富士山倒影，可餵鯉魚</div></div><a class="map-btn" href="https://maps.google.com/?cid=1601773399916388209" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 前往別墅辦理入住</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">傍晚</div><div class="spot-name">Toquetake Sanso 入住・木風呂</div></div><span class="spot-tag tag-activity">享受</span></div><div class="spot-note">🛁 晚上泡木風呂！湖景別墅有免費接送，吊床上享受富士山夜景</div></div></div></div>
-  </div>
-</div>
+<!-- ======= TIPS PAGE ======= -->
+<div class="pg" id="pg-tp">
+  <div class="tg">
 
-<!-- 8/11 -->
-<div class="day-section" id="day2">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">11</div></div>
-    <div><div class="day-title">河口湖 第二天</div><div class="day-subtitle">天空鳥居・纜車・西湖</div></div>
-  </div>
-  <div class="accom-card" style="margin-bottom:14px"><div class="accom-header"><div class="accom-icon">🏡</div><div class="accom-info"><div class="accom-name">Toquetake Sanso 別墅（第2晚）</div><div class="accom-meta">今晚繼續住這裡・明天退房</div></div><span class="accom-tag">⭐ 4.94</span></div></div>
-  <p class="section-label">📍 今日行程</p>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">08:00</div><div class="spot-name">富士山遙拝所（天空の鳥居）</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">鳥居框住富士山山頂的絕景！步行30分鐘上山，入場費200日圓，早去避暑</div></div><a class="map-btn" href="https://maps.google.com/?cid=12497809727370112236" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約10分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">11:00</div><div class="spot-name">河口湖遊覧船（天晴）</div></div><span class="spot-tag tag-activity">體驗</span></div><div class="spot-note">從湖上欣賞富士山！木製仿古遊覧船，航程約20分鐘，成人1,000日圓</div></div><a class="map-btn" href="https://maps.google.com/?q=河口湖遊覧船天晴" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約15分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">13:00</div><div class="spot-name">天上山公園（富士山纜車）</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">纜車來回1,000日圓。山頂同時欣賞富士山＋河口湖全景</div></div><a class="map-btn" href="https://maps.google.com/?cid=18411347041651092919" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約20分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">15:30</div><div class="spot-name">西湖いやしの里根場</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">重建的茅草屋古村落！手工藝體驗、和菓子製作、穿和服拍照，入場費500日圓</div></div><a class="map-btn" href="https://maps.google.com/?q=西湖いやしの里根場" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 回別墅</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">晚上</div><div class="spot-name">別墅・最後一晚木風呂</div></div><span class="spot-tag tag-activity">享受</span></div><div class="spot-note">🛁 最後一晚！在吊床上仰望星空，明天退房往御殿場方向出發</div></div></div></div>
-  </div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#eaf3de;">🧾</div><div class="tt">退稅規定（2025 現行制度）</div></div>
+      <div class="tb">
+        同一店家消費未稅金額達 <strong>¥5,000 以上</strong>即可辦理退稅，可退回約 <strong>10% 消費稅</strong>。需出示護照或 <strong>Visit Japan Web QR Code</strong>，必須購物<strong>當天</strong>在同一店辦理，不可隔天補辦。
+        <table class="tax-table">
+          <tr><th>商品類型</th><th>內容</th><th>攜出期限</th></tr>
+          <tr><td><strong>一般物品</strong></td><td>服飾、家電、包包、鐘錶</td><td>入境後 6 個月內</td></tr>
+          <tr><td><strong>消耗品</strong></td><td>藥妝、食品、飲料、化妝品</td><td>入境後 30 天內</td></tr>
+          <tr><td><strong>混合購買</strong></td><td>一般＋消耗品合計達標</td><td>視同消耗品，30 天內</td></tr>
+        </table>
+        <div class="tw">⚠️ 2025年4月起，免稅商品禁止另行郵寄回國，必須隨身攜帶或放入托運行李出境。若海關查驗時無法出示商品，將被補徵10%消費稅。</div>
+        <div class="tw">⚠️ 2026年11月起將改為「先課稅後機場退稅」新制，屆時出境時需在機場辦理退款，建議提早到機場預留時間。</div>
+        <div class="tg2">✅ 部分店家使用 Visit Japan Web QR Code 可免出示護照，降低護照遺失風險。部分退稅櫃台會收取1–3%手續費，建議購物前確認。</div>
+      </div>
+    </div>
 
-<!-- 8/12 -->
-<div class="day-section" id="day3">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">12</div></div>
-    <div><div class="day-title">御殿場 Outlets → 返回東京</div><div class="day-subtitle">繞富士山一圈</div></div>
-  </div>
-  <div class="badge-row"><span class="ci-badge co">🏡 CHECK OUT・河口湖別墅</span><span class="ci-badge ci">🏠 CHECK IN・駒込</span></div>
-  <div class="accom-card checkout" style="margin-bottom:10px"><div class="accom-header"><div class="accom-icon">🏡</div><div class="accom-info"><div class="accom-name">Toquetake Sanso・退房</div><div class="accom-meta">帶走所有行李，直接自駕往富士宮方向</div></div><span class="accom-tag">退房日</span></div></div>
-  <div class="accom-card">
-    <div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">東京住宿・駒込站附近</div><div class="accom-meta">豐島区・駒込駅步行圈・住8/12–8/17（5晚）</div></div><span class="accom-tag">8/12 入住</span></div>
-    <div class="accom-details"><span class="accom-chip">🚃 JR山手線・駒込駅</span><span class="accom-chip">🌿 六義園步行圈</span><span class="accom-chip">↔ 池袋10分</span><span class="accom-chip">↔ 上野15分</span><span class="accom-chip">↔ 新宿20分</span></div>
-    <a class="accom-link" href="https://www.airbnb.com.tw/rooms/44343778" target="_blank">🔗 查看 Airbnb 房源</a>
-  </div>
-  <div class="bonus-box"><strong>🌿 駒込限定加分！六義園</strong>住宿步行圈內就有江戶時代的大名庭園「六義園」，是東京最美的日本庭園之一。入場費300日圓。</div>
-  <p class="section-label">📍 今日行程</p>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">09:30</div><div class="spot-name">まかいの牧場</div></div><span class="spot-tag tag-activity">體驗</span></div><div class="spot-note">鞦韆＋富士山的超熱門打卡！餵羊、牽山羊、現做鮮奶霜淇淋，開門即到人少</div></div><a class="map-btn" href="https://maps.google.com/?cid=10960162282246731445" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約30分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">12:00</div><div class="spot-name">富士山夢の大橋</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">階梯彷彿直通富士山！免費，24小時，順路拍照即可</div></div><a class="map-btn" href="https://maps.google.com/?cid=2581878181426727470" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車約40分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">13:30</div><div class="spot-name">御殿場 Premium Outlets</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">210間品牌！Nike、Coach、Burberry折扣超大。背景還有富士山，開到晚上20:00</div></div><a class="map-btn" href="https://maps.google.com/?cid=5814346422745768836" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚗 開車返回東京・駒込 約1.5小時</div>
-  </div>
-  <div class="notice-box"><strong>🗺️ 今日路線邏輯</strong>富士山西南 → 南 → 東側（御殿場）→ 東京，完美繞一圈不走回頭路！</div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#e6f1fb;">💳</div><div class="tt">交通 IC 卡</div></div>
+      <div class="tb">建議辦 <strong>Suica</strong> 或 <strong>ICOCA</strong>，可搭電車、公車、便利商店付款。抵達機場即可辦理，或用 Apple / Google Wallet 加入電子版。<div class="tg2">自駕期間高速費可用 ETC 卡或現金，河口湖段建議備現金</div></div>
+    </div>
 
-<!-- 8/13 -->
-<div class="day-section" id="day4">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">13</div></div>
-    <div><div class="day-title">原宿・表參道・澀谷Sky</div><div class="day-subtitle">從駒込出發・山手線直達</div></div>
-  </div>
-  <div class="accom-card" style="margin-bottom:14px"><div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">駒込住宿（第2晚）</div><div class="accom-meta">JR山手線 駒込駅 → 原宿駅 約12分・非常方便</div></div></div></div>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">09:00</div><div class="spot-name">明治神宮</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">東京最知名神社，70公頃森林。從駒込搭山手線到原宿站只要約12分鐘！清晨最清幽，免費入場</div></div><a class="map-btn" href="https://maps.google.com/?q=明治神宮" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行5分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">10:30</div><div class="spot-name">原宿・竹下通り</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">可愛少女系聖地！棉花糖可麗餅、彩虹棉花糖、藥妝、二手古著</div></div><a class="map-btn" href="https://maps.google.com/?q=竹下通り+原宿" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行8分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">12:30</div><div class="spot-name">表參道・午餐</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">東京最時尚林蔭大道！表參道Hills地下美食街，名牌旗艦店林立</div></div><a class="map-btn" href="https://maps.google.com/?q=表参道ヒルズ" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行15分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">14:30</div><div class="spot-name">澀谷十字路口・逛街</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">全球最繁忙路口！Shibuya 109、Loft、東急Hands、藥妝店集中在這一帶</div></div><a class="map-btn" href="https://maps.google.com/?q=渋谷スクランブル交差点" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行即達</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">17:00</div><div class="spot-name">澀谷 Sky 觀景台</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">⚠️ 需提前網路預約！選日落前1小時入場，360度無遮擋東京全景，票價2,000日圓</div></div><a class="map-btn" href="https://maps.google.com/?cid=8067212359343678579" target="_blank">📍 Google Maps</a></div></div>
-  </div>
-  <div class="notice-box"><strong>⚡ 澀谷Sky立即預約！</strong>shibuya-scramble-square.com 預約日落時段，8月旺季極搶手！</div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#faeeda;">📶</div><div class="tt">網路 / SIM 卡</div></div>
+      <div class="tb">推薦：<strong>IIJmio / Docomo 數據卡</strong>或在台灣先買 <strong>日本 eSIM</strong>（Klook、KKday 都有售）。Pocket WiFi 可多人共用。機場 7-11 也有賣即買即用 SIM。</div>
+    </div>
 
-<!-- 8/14 -->
-<div class="day-section" id="day5">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">14</div></div>
-    <div><div class="day-title">鎌倉一日遊</div><div class="day-subtitle">從駒込搭電車・勿開車</div></div>
-  </div>
-  <div class="accom-card" style="margin-bottom:14px"><div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">駒込住宿（第3晚）</div><div class="accom-meta">駒込駅 → 鎌倉：山手線轉橫須賀線，約70分鐘</div></div></div></div>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">07:00</div><div class="spot-name">鎌倉高校前踏切</div></div><span class="spot-tag tag-culture">聖地</span></div><div class="spot-note">《灌籃高手》取景地！早上7點人最少，現有設置專門拍照區</div></div><a class="map-btn" href="https://maps.google.com/?cid=1819797686801071229" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚃 江之電約10分 → 長谷站步行15分</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">09:00</div><div class="spot-name">高德院鎌倉大佛</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">高11.3公尺青銅大佛，建於1252年。入場費300日圓，可進入大佛內部</div></div><a class="map-btn" href="https://maps.google.com/?cid=2216777826481991500" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚃 搭江之電至鎌倉站</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">11:00</div><div class="spot-name">鶴岡八幡宮</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">鎌倉最重要的神社，建於1063年，本宮居高俯瞰鎌倉市區</div></div><a class="map-btn" href="https://maps.google.com/?q=鶴岡八幡宮" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行5分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">12:30</div><div class="spot-name">小町通・午餐・伴手禮</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">紫芋可樂餅、鳩サブレー、抹茶霜淇淋必買。午餐推薦鎌倉野菜料理或海鮮丼</div></div><a class="map-btn" href="https://maps.google.com/?q=小町通り+鎌倉" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行至海邊</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">下午</div><div class="spot-name">由比ヶ浜・鎌倉海邊</div></div><span class="spot-tag tag-nature">自然</span></div><div class="spot-note">8月海水浴場開放！可下水游泳或踏浪，傍晚夕陽非常美</div></div></div></div>
-  </div>
-  <div class="notice-box"><strong>🚃 交通路線</strong>駒込 →（山手線）→ 品川 →（橫須賀線）→ 鎌倉，約70分鐘。</div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#fce4ec;">🚗</div><div class="tt">自駕注意事項</div></div>
+      <div class="tb">需攜帶台灣駕照＋<strong>日文譯本</strong>（監理所辦理，非國際駕照）。日本靠<strong>左</strong>行駛，方向盤在右。導航推薦 <strong>Yahoo!カーナビ</strong> 或 Google Maps。<div class="tw">⚠️ 鎌倉禁止一般車輛進入！請搭電車前往</div></div>
+    </div>
 
-<!-- 8/15 -->
-<div class="day-section" id="day6">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">15</div></div>
-    <div><div class="day-title">湘南單軌 &amp; 江之島</div><div class="day-subtitle">從駒込搭電車前往大船</div></div>
-  </div>
-  <div class="accom-card" style="margin-bottom:14px"><div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">駒込住宿（第4晚）</div><div class="accom-meta">駒込駅 → 大船：山手線轉橫須賀線，約60分鐘</div></div></div></div>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">10:00</div><div class="spot-name">湘南單軌電車（大船出發）</div></div><span class="spot-tag tag-activity">體驗</span></div><div class="spot-note">懸掛式單軌！電車掛在軌道下方穿越山丘隧道，像雲霄飛車。大船→江之島全程約15分鐘</div></div><a class="map-btn" href="https://maps.google.com/?cid=17539261575266044008" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚟 搭單軌至江之島站</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">11:00</div><div class="spot-name">江之島神社・參拜</div></div><span class="spot-tag tag-culture">文化</span></div><div class="spot-note">供奉弁財天的千年神社，求姻緣、藝術、財運最靈驗</div></div><a class="map-btn" href="https://maps.google.com/?q=江島神社" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 繼續往島內走</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">12:30</div><div class="spot-name">江之島・海鮮丼午餐</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">島上海鮮超新鮮！生蠔、鮑魚、海膽丼，推薦島内参道兩旁的海景餐廳</div></div></div></div>
-    <div class="arrow">🚶 步行約10分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">14:00</div><div class="spot-name">江之島岩屋洞窟</div></div><span class="spot-tag tag-nature">自然</span></div><div class="spot-note">海蝕天然洞窟，全長152公尺，燭光搖曳超神秘！入場費500日圓</div></div><a class="map-btn" href="https://maps.google.com/?q=江の島岩屋" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行至展望台</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">傍晚</div><div class="spot-name">シーキャンドル（燈塔）</div></div><span class="spot-tag tag-view">景觀</span></div><div class="spot-note">360度展望台看富士山＋相模灣全景，傍晚夕陽超美，入場費500日圓</div></div><a class="map-btn" href="https://maps.google.com/?q=江の島シーキャンドル" target="_blank">📍 Google Maps</a></div></div>
-  </div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#e1f5ee;">💴</div><div class="tt">換匯 / 現金</div></div>
+      <div class="tb">日本仍以現金為主，建議換 <strong>¥50,000–80,000</strong> 備用。台灣在兆豐或郵局換匯匯率較優。或到日本機場 <strong>7-11 ATM</strong> 用金融卡提領也很方便。</div>
+    </div>
 
-<!-- 8/16 -->
-<div class="day-section" id="day7">
-  <div class="day-header">
-    <div class="day-badge red"><div class="month">AUG</div><div class="num">16</div></div>
-    <div><div class="day-title">🎠 東京迪士尼樂園</div><div class="day-subtitle">從駒込前往・山手線轉舞濱</div></div>
-  </div>
-  <div class="accom-card" style="margin-bottom:14px"><div class="accom-header"><div class="accom-icon">🏠</div><div class="accom-info"><div class="accom-name">駒込住宿（第5晚）</div><div class="accom-meta">駒込 → 東京駅（山手線）→ 舞濱（京葉線），約35分鐘</div></div></div></div>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">09:00 開園</div><div class="spot-name">東京迪士尼樂園</div></div><span class="spot-tag tag-theme">樂園</span></div><div class="spot-note">開園立刻衝！用App搶購 Premier Access。美女與野獸城堡、小熊維尼、星際大戰都超熱門</div></div><a class="map-btn" href="https://maps.google.com/?cid=16490271119724106699" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🎡 園內移動</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">中午</div><div class="spot-name">園內特色美食</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">米奇造型點心、印第安納瓊斯燻雞腿必吃！避開12–13點尖峰用餐</div></div></div></div>
-    <div class="arrow">🎡 繼續遊玩</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">20:00</div><div class="spot-name">夜間遊行・煙火</div></div><span class="spot-tag tag-activity">體驗</span></div><div class="spot-note">東京迪士尼壓軸！提前去卡位，閉園21:00</div></div></div></div>
-  </div>
-  <div class="notice-box"><strong>🎟️ 門票＋交通</strong>8月旺季門票需提前官網購買！駒込 →（山手線）→ 東京 →（JR京葉線）→ 舞濱站，全程約35分鐘。</div>
-</div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#f3e5f5;">🌡️</div><div class="tt">8月天氣 / 裝備</div></div>
+      <div class="tb">東京8月均溫約 <strong>30–35°C</strong>，體感超過40°C。必備：<strong>防曬乳、攜帶型風扇、降溫噴霧、補水飲料</strong>。河口湖早晨較涼可帶薄外套。<div class="tw">⚠️ 8月是颱風季，出發前確認天氣預報</div></div>
+    </div>
 
-<!-- 8/17 -->
-<div class="day-section" id="day8">
-  <div class="day-header">
-    <div class="day-badge"><div class="month">AUG</div><div class="num">17</div></div>
-    <div><div class="day-title">築地・秋葉原・新宿</div><div class="day-subtitle">最終日採購衝刺・駒込出發</div></div>
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#e6f1fb;">🏥</div><div class="tt">醫療 / 緊急聯絡</div></div>
+      <div class="tb">建議出發前購買含醫療保障的<strong>旅遊保險</strong>。常備藥請在台灣帶足。<br><strong>緊急電話：</strong>警察 110｜救護車 119<br>台灣駐日代表處：<strong>03-3280-7811</strong><div class="tg2">✅ 便利商店可買基本成藥，如頭痛藥、止瀉藥</div></div>
+    </div>
+
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#eaf3de;">🙏</div><div class="tt">禮儀 / 文化習慣</div></div>
+      <div class="tb">電車內<strong>禁止講電話</strong>、手機靜音。路上垃圾要帶走，路邊幾乎沒有垃圾桶。神社拍照注意禁拍區域。排隊文化非常嚴格，<strong>絕對不能插隊</strong>。<div class="tw">⚠️ 某些地區禁止邊走邊吃，注意路邊告示</div></div>
+    </div>
+
+    <div class="tc">
+      <div class="th"><div class="tic" style="background:#faeeda;">🏪</div><div class="tt">便利商店活用</div></div>
+      <div class="tb">7-11、FamilyMart、Lawson 幾乎24小時。早餐、飲料、藥品、雨傘、ATM 都在這裡解決。<strong>飯糰＋肉包＋咖啡</strong>是日本早餐神組合，比外面便宜又快速。<div class="tg2">✅ 7-11 ATM 可用台灣金融卡提日幣，手續費約¥200</div></div>
+    </div>
+
   </div>
-  <div class="badge-row"><span class="ci-badge co">🏠 CHECK OUT・駒込・記得退稅！</span></div>
-  <div class="bonus-box"><strong>🌿 退房前可去六義園晨走！</strong>步行可達，早上8點開園，江戶時代庭園在清晨幾乎沒人。入場費300日圓，最後一個東京早晨很值得。</div>
-  <div class="timeline">
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">07:00</div><div class="spot-name">築地場外市場・早餐</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">日本海鮮聖地！新鮮海膽、鮪魚、鮭魚卵，玉子燒、炸牡蠣超好吃。從駒込搭山手線到新橋轉大江戸線約25分</div></div><a class="map-btn" href="https://maps.google.com/?q=築地場外市場" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚇 地鐵約20分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">10:00</div><div class="spot-name">秋葉原・電器＆動漫</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">電器家電、動漫周邊、扭蛋！Yodobashi Camera、animate必逛。駒込搭山手線到秋葉原只要約15分鐘！</div></div><a class="map-btn" href="https://maps.google.com/?q=秋葉原電気街" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚇 地鐵約15分鐘</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">13:00</div><div class="spot-name">新宿・藥妝掃貨</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">松本清、サンドラッグ集中在新宿！面膜、防曬、資生堂、肌研超划算。記得帶護照退稅</div></div><a class="map-btn" href="https://maps.google.com/?q=新宿マツモトキヨシ" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🚶 步行</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">15:00</div><div class="spot-name">新宿伊勢丹・地下食品樓</div></div><span class="spot-tag tag-shop">購物</span></div><div class="spot-note">伴手禮寶庫！東京芭娜娜、白色戀人、各式日本零食全部在這裡找得到</div></div><a class="map-btn" href="https://maps.google.com/?q=新宿伊勢丹" target="_blank">📍 Google Maps</a></div></div>
-    <div class="arrow">🍜 最後晚餐</div>
-    <div class="spot"><div class="spot-card"><div class="spot-inner"><div class="spot-top"><div><div class="spot-time">晚餐</div><div class="spot-name">新宿思い出横丁</div></div><span class="spot-tag tag-food">美食</span></div><div class="spot-note">昭和風情懷舊小巷！串燒、日本酒、燒鳥，東京最後一餐在這裡最有感覺</div></div><a class="map-btn" href="https://maps.google.com/?q=新宿思い出横丁" target="_blank">📍 Google Maps</a></div></div>
-  </div>
-  <div class="notice-box"><strong>✈️ 回程交通</strong>成田：新宿 → 成田特快（N'EX）約80分。羽田：新宿 → 品川 → 羽田，約40分。記得帶護照辦理免稅退稅！</div>
 </div>
 
 <script>
-function showDay(i){
-  document.querySelectorAll('.day-section').forEach(function(el,j){el.classList.toggle('active',i===j);});
-  document.querySelectorAll('.tab').forEach(function(el,j){el.classList.toggle('active',i===j);});
-  document.querySelectorAll('.tab')[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+function showPg(id,btn){
+  document.querySelectorAll('.pg').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.nb').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('pg-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+function showD(i){
+  document.querySelectorAll('.ds').forEach(function(e,j){e.classList.toggle('on',i===j);});
+  document.querySelectorAll('.dtab').forEach(function(e,j){e.classList.toggle('on',i===j);});
+  document.querySelectorAll('.dtab')[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
 }
 </script>
 </body>
